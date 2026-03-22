@@ -59,7 +59,6 @@
         color: var(--text);
       }
 
-      /* ── Scrollbar ── */
       ::-webkit-scrollbar {
         width: 4px;
       }
@@ -71,9 +70,6 @@
         border-radius: 99px;
       }
 
-      /* ═══════════════════════════════════════════
-       AUTH SCREEN
-    ═══════════════════════════════════════════ */
       #auth-screen {
         position: fixed;
         inset: 0;
@@ -217,7 +213,6 @@
         display: block;
       }
 
-      /* Tab toggle inside auth card */
       .auth-tabs {
         display: flex;
         gap: 0;
@@ -249,9 +244,6 @@
         display: flex;
       }
 
-      /* ═══════════════════════════════════════════
-       APP SHELL
-    ═══════════════════════════════════════════ */
       #app {
         display: none;
         height: 100vh;
@@ -261,7 +253,6 @@
         display: flex;
       }
 
-      /* ── Sidebar ── */
       .sidebar {
         width: 360px;
         min-width: 280px;
@@ -323,7 +314,6 @@
         height: 22px;
       }
 
-      /* Search */
       .search-wrap {
         padding: 8px 16px 12px;
       }
@@ -354,7 +344,6 @@
         color: var(--text3);
       }
 
-      /* Conversation list */
       .convo-list {
         flex: 1;
         overflow-y: auto;
@@ -459,7 +448,6 @@
         justify-content: center;
       }
 
-      /* Sidebar footer */
       .sidebar-footer {
         padding: 12px 16px;
         border-top: 1px solid var(--border);
@@ -500,7 +488,6 @@
         color: var(--text);
       }
 
-      /* ── Chat Panel ── */
       .chat-panel {
         flex: 1;
         display: flex;
@@ -509,7 +496,6 @@
         min-width: 0;
       }
 
-      /* Empty state */
       .chat-empty {
         flex: 1;
         display: flex;
@@ -549,7 +535,6 @@
         background: var(--blue-dark);
       }
 
-      /* Chat header */
       .chat-header {
         display: none;
         align-items: center;
@@ -590,7 +575,6 @@
         display: flex;
       }
 
-      /* Bubble */
       .bubble-row {
         display: flex;
         align-items: flex-end;
@@ -662,7 +646,6 @@
         margin-top: 2px;
       }
 
-      /* System message */
       .sys-msg {
         text-align: center;
         font-size: 12px;
@@ -677,7 +660,6 @@
         border: 1px solid var(--border);
       }
 
-      /* Typing indicator */
       .typing-row {
         display: none;
         align-items: flex-end;
@@ -719,7 +701,6 @@
         }
       }
 
-      /* Input bar */
       .chat-input-area {
         display: none;
         padding: 14px 20px;
@@ -743,7 +724,6 @@
         border-color: var(--text3);
       }
 
-      /* ── Media button (replaces emoji button) ── */
       .media-btn {
         background: none;
         border: none;
@@ -765,7 +745,6 @@
         height: 22px;
       }
 
-      /* ── Media preview strip above input bar ── */
       #media-preview-wrap {
         display: none;
         align-items: center;
@@ -807,7 +786,6 @@
         color: var(--red);
       }
 
-      /* ── Media bubbles inside chat ── */
       .bubble-media-img {
         max-width: 260px;
         max-height: 220px;
@@ -861,9 +839,6 @@
         background: none;
       }
 
-      /* ═══════════════════════════════════════════
-       NOTIFICATION BUBBLE
-    ═══════════════════════════════════════════ */
       #notif-container {
         position: fixed;
         bottom: 24px;
@@ -936,9 +911,6 @@
         text-overflow: ellipsis;
       }
 
-      /* ═══════════════════════════════════════════
-       NEW MESSAGE MODAL
-    ═══════════════════════════════════════════ */
       .modal-backdrop {
         position: fixed;
         inset: 0;
@@ -1037,7 +1009,6 @@
         background: var(--blue-dark);
       }
 
-      /* Online users panel inside modal */
       .online-users-list {
         display: flex;
         flex-direction: column;
@@ -1067,7 +1038,6 @@
         color: var(--green);
       }
 
-      /* Responsive */
       @media (max-width: 640px) {
         .sidebar {
           width: 100%;
@@ -1085,9 +1055,7 @@
     </style>
   </head>
   <body>
-    <!-- ══════════════════════════════════════════
-     AUTH SCREEN
-══════════════════════════════════════════ -->
+
     <div id="auth-screen">
       <div class="auth-box">
         <div class="auth-logo">TweetX</div>
@@ -1110,7 +1078,6 @@
             </div>
           </div>
 
-          <!-- Login Panel -->
           <div class="auth-panel active" id="panel-login">
             <input
               class="auth-input"
@@ -1134,7 +1101,6 @@
             </button>
           </div>
 
-          <!-- Signup Panel -->
           <div class="auth-panel" id="panel-signup">
             <input class="auth-input" id="signup-username" type="text" placeholder="Username" autocomplete="username" />
             <input class="auth-input" id="signup-password" type="password" placeholder="Password" autocomplete="new-password" />
@@ -1150,11 +1116,8 @@
       </div>
     </div>
 
-    <!-- ══════════════════════════════════════════
-     MAIN APP
-══════════════════════════════════════════ -->
+
     <div id="app">
-      <!-- ── SIDEBAR ── -->
       <div class="sidebar" id="sidebar">
         <div class="sidebar-header">
           <div class="sidebar-username" id="sidebar-username">username</div>
@@ -1206,7 +1169,6 @@
         </div>
 
         <div class="convo-list" id="convo-list">
-          <!-- populated by JS -->
         </div>
 
         <div class="sidebar-footer">
@@ -1216,9 +1178,7 @@
         </div>
       </div>
 
-      <!-- ── CHAT PANEL ── -->
       <div class="chat-panel" id="chat-panel">
-        <!-- Empty state -->
         <div class="chat-empty" id="chat-empty">
           <svg
             viewBox="0 0 24 24"
@@ -1239,7 +1199,6 @@
           </button>
         </div>
 
-        <!-- Chat header -->
         <div class="chat-header" id="chat-header">
           <div
             class="avatar"
@@ -1297,10 +1256,8 @@
           </div>
         </div>
 
-        <!-- Messages -->
         <div class="messages" id="messages"></div>
-
-        <!-- Typing indicator -->
+        
         <div style="padding: 0 20px" id="typing-area">
           <div class="typing-row" id="typing-row">
             <div class="bubble-avatar" id="typing-avatar">?</div>
@@ -1312,9 +1269,7 @@
           </div>
         </div>
 
-        <!-- Input area -->
         <div class="chat-input-area" id="chat-input-area">
-          <!-- Media preview strip (visible when a file is staged) -->
           <div id="media-preview-wrap">
             <img id="media-preview-thumb" src="" alt="preview" style="display:none" />
             <video id="media-preview-video-thumb" src="" style="display:none" muted></video>
@@ -1322,7 +1277,6 @@
           </div>
 
           <div class="input-bar">
-            <!-- Hidden file input : accepts images + videos up to 5 MB -->
             <input
               type="file"
               id="media-file-input"
@@ -1330,7 +1284,6 @@
               style="display:none"
               onchange="onFileSelected(event)"
             />
-            <!-- Media trigger button (replaces emoji button) -->
             <button
               class="media-btn"
               id="media-btn"
@@ -1363,9 +1316,6 @@
       </div>
     </div>
 
-    <!-- ══════════════════════════════════════════
-     NEW MESSAGE MODAL
-══════════════════════════════════════════ -->
     <div
       class="modal-backdrop hidden"
       id="modal-backdrop"
@@ -1404,27 +1354,18 @@
       </div>
     </div>
 
-    <!-- Notification container -->
     <div id="notif-container"></div>
 
     <script>
-      // ════════════════════════════════════════════════
-      //  STATE
-      // ════════════════════════════════════════════════
       let myUsername = "";
       let ws = null;
-      let activeConvo = null; // username of current chat
+      let activeConvo = null; 
       let typingTimer = null;
       let isTyping = false;
 
-      // conversations: { [username]: { messages: [], unread: 0, online: false, lastMsg: '' } }
       const convos = {};
-      // track all known online users (from userList broadcasts)
       const onlineUsers = new Set();
 
-      // ════════════════════════════════════════════════
-      //  AUTH
-      // ════════════════════════════════════════════════
       function switchAuthTab(tab) {
         document
           .getElementById("tab-login")
@@ -1444,7 +1385,6 @@
             : "Have an account? <a onclick=\"switchAuthTab('login')\">Log in</a>";
       }
 
-      // ─── Login (REST) ────────────────────────────────────────────
       async function handleLogin() {
         const u   = document.getElementById("login-username").value.trim();
         const p   = document.getElementById("login-password").value.trim();
@@ -1475,8 +1415,6 @@
           err.classList.add("show");
         }
       }
-
-      // ─── Signup (REST) ───────────────────────────────────────────
       async function handleSignup() {
         const u   = document.getElementById('signup-username').value.trim();
         const p   = document.getElementById('signup-password').value.trim();
@@ -1505,8 +1443,6 @@
           err.classList.add('show');
         }
       }
-
-      // ─── Logout (REST) ───────────────────────────────────────────
       async function handleLogout() {
         if (ws) { ws.close(); ws = null; }
         await fetch("/api/auth/logout", { method: "POST" }).catch(() => {});
@@ -1522,11 +1458,6 @@
         document.getElementById("login-password").value = "";
       }
 
-      // localStorage auth removed — users now live in H2 database via /api/auth
-
-      // ════════════════════════════════════════════════
-      //  ENTER APP
-      // ════════════════════════════════════════════════
       function enterApp(username) {
         myUsername = username;
         document.getElementById("auth-screen").classList.add("hidden");
@@ -1535,23 +1466,20 @@
         document.getElementById("footer-avatar").textContent = username[0].toUpperCase();
         document.getElementById("footer-name").textContent = username;
         connectWebSocket();
-        // Load previous chat partners from DB and show them in sidebar immediately
         loadChatHistory();
       }
 
-      // ─── Fetch all past chat partners from DB on login ────────────
       async function loadChatHistory() {
         try {
           const resp = await fetch("/api/conversations");
           if (!resp.ok) return;
-          const partners = await resp.json(); // string[]
+          const partners = await resp.json(); 
           for (const partner of partners) {
             if (!convos[partner]) {
               convos[partner] = { messages: [], unread: 0, lastMsg: "" };
             }
           }
           renderConvoList();
-          // Auto-open the first past conversation so messages are immediately visible
           if (partners.length > 0) {
             openConvo(partners[0]);
           }
@@ -1560,9 +1488,6 @@
         }
       }
 
-      // ════════════════════════════════════════════════
-      //  WEBSOCKET
-      // ════════════════════════════════════════════════
       function connectWebSocket() {
         const protocol = location.protocol === "https:" ? "wss" : "ws";
         ws = new WebSocket(`${protocol}://${location.host}/chat`);
@@ -1599,7 +1524,6 @@
             const content = data.content;
             const ts      = data.timestamp;
 
-            // Only handle if it's for me or from me
             if (to === myUsername || from === myUsername) {
               const partner = (from === myUsername) ? to : from;
               ensureConvo(partner);
@@ -1607,7 +1531,6 @@
               convos[partner].messages.push({ type: "text", from, content, ts });
 
               if (activeConvo === partner) {
-                // Server is the single source of truth — render here only
                 appendBubble(from, content, ts);
               } else if (from !== myUsername) {
                 convos[partner].unread = (convos[partner].unread || 0) + 1;
@@ -1621,8 +1544,8 @@
           case "media": {
             const from     = data.from;
             const to       = data.to;
-            const content  = data.content;   // base64 data URL
-            const fileType = data.fileType;  // e.g. "image/png"
+            const content  = data.content;   
+            const fileType = data.fileType; 
             const ts       = data.timestamp;
 
             if (to === myUsername || from === myUsername) {
@@ -1699,9 +1622,6 @@
         }
       }
 
-      // ════════════════════════════════════════════════
-      //  CONVERSATIONS
-      // ════════════════════════════════════════════════
       function ensureConvo(username) {
         if (!convos[username]) {
           convos[username] = {
@@ -1718,23 +1638,19 @@
         activeConvo = username;
         convos[username].unread = 0;
 
-        // Show chat panel
         document.getElementById("chat-empty").style.display = "none";
         document.getElementById("chat-header").classList.add("visible");
         document.getElementById("messages").classList.add("visible");
         document.getElementById("chat-input-area").classList.add("visible");
 
-        // Update header
         document.getElementById("chat-name").textContent = username;
         document.getElementById("chat-avatar").textContent = username[0].toUpperCase();
         document.getElementById("chat-status").textContent =
           onlineUsers.has(username) ? "Active now" : "Offline";
 
-        // Show loading while fetching
         const msgEl = document.getElementById("messages");
         msgEl.innerHTML = `<div class="sys-msg"><span>Loading messages\u2026</span></div>`;
-
-        // ── Fetch full conversation history from DB ────────────────────
+        
         try {
           const resp = await fetch(`/api/messages?with=${encodeURIComponent(username)}`);
 
@@ -1747,7 +1663,6 @@
 
           const history = await resp.json();
 
-          // parseTimestamp() handles both ISO strings AND Jackson arrays safely
           convos[username].messages = history.map(m => ({
             type:     m.type,
             from:     m.sender,
@@ -1763,7 +1678,6 @@
               : last.content;
           }
 
-          // Render
           msgEl.innerHTML = "";
           if (convos[username].messages.length === 0) {
             msgEl.innerHTML = `<div class="sys-msg"><span>No messages yet \u2014 say hi! \uD83D\uDC4B</span></div>`;
@@ -1787,12 +1701,6 @@
         document.getElementById("msg-input").focus();
       }
 
-      /**
-       * Safely parse a timestamp emitted by Jackson.
-       *   ISO string:  "2026-03-17T23:30:00"          (write-dates-as-timestamps=false)
-       *   Array:       [2026,3,17,23,30,0,nanoseconds] (write-dates-as-timestamps=true)
-       * Returns "11:30 PM" style string, or "" on failure.
-       */
       function parseTimestamp(raw) {
         try {
           let d;
@@ -1862,9 +1770,6 @@
         renderConvoList();
       }
 
-      // ════════════════════════════════════════════════
-      //  MESSAGING
-      // ════════════════════════════════════════════════
       function appendBubble(from, content, ts) {
         const isSelf = from === myUsername;
         const msgEl  = document.getElementById("messages");
@@ -1880,7 +1785,6 @@
         msgEl.scrollTop = msgEl.scrollHeight;
       }
 
-      // ─── Media bubble renderer ───────────────────────────────────
       function appendMediaBubble(from, dataUrl, fileType, ts) {
         const isSelf = from === myUsername;
         const msgEl  = document.getElementById("messages");
@@ -1889,7 +1793,6 @@
 
         let mediaHtml;
         if (fileType.startsWith("image/")) {
-          // Clicking the image opens it full-size in a new tab
           mediaHtml = `<img class="bubble-media-img" src="${dataUrl}" alt="image"
             onclick="window.open(this.src,'_blank')" />`;
         } else {
@@ -1909,11 +1812,9 @@
         msgEl.scrollTop = msgEl.scrollHeight;
       }
 
-      // ─── Staged media (selected but not yet sent) ────────────────
       let stagedMediaDataUrl = null;
       let stagedMediaFileType = null;
 
-      // ─── File selected → upload via REST, store URL ─────────────
       async function onFileSelected(event) {
         const file = event.target.files[0];
         if (!file) return;
@@ -1924,12 +1825,10 @@
           return;
         }
 
-        // Show uploading state
         const wrap = document.getElementById("media-preview-wrap");
         wrap.classList.add("visible");
         document.getElementById("send-btn").disabled = true;
 
-        // Preview locally while uploading
         const localUrl = URL.createObjectURL(file);
         const imgThumb = document.getElementById("media-preview-thumb");
         const vidThumb = document.getElementById("media-preview-video-thumb");
@@ -1943,7 +1842,6 @@
           imgThumb.style.display = "none";
         }
 
-        // Upload to server — NOT base64 over WebSocket
         const formData = new FormData();
         formData.append("file", file);
         try {
@@ -1955,7 +1853,6 @@
             return;
           }
           const data = await resp.json();
-          // Store the server URL (not the local blob URL or base64)
           stagedMediaDataUrl  = data.url;
           stagedMediaFileType = data.fileType || file.type;
           document.getElementById("send-btn").disabled = false;
@@ -1972,16 +1869,13 @@
         document.getElementById("media-preview-wrap").classList.remove("visible");
         document.getElementById("media-preview-thumb").src = "";
         document.getElementById("media-preview-video-thumb").src = "";
-        // Disable send if text input is also empty
         const txt = document.getElementById("msg-input").value.trim();
         document.getElementById("send-btn").disabled = !txt;
       }
 
-      // ─── Send message (text OR media) ───────────────────────────
       function sendMessage() {
         if (!activeConvo) return;
 
-        // If media is staged, send that first
         if (stagedMediaDataUrl) {
           sendToServer({
             type:     "media",
@@ -1990,15 +1884,12 @@
             fileType: stagedMediaFileType
           });
           cancelMedia();
-          // Don't return — allow text to be sent too if present
         }
 
         const input   = document.getElementById("msg-input");
         const content = input.value.trim();
         if (content) {
-          // Send to server — do NOT append locally.
-          // The server will echo it back, and that echo is the single
-          // source of truth that renders the bubble (fixes duplicates).
+
           sendToServer({
             type:    "message",
             to:      activeConvo,
@@ -2008,7 +1899,6 @@
           document.getElementById("send-btn").disabled = true;
         }
 
-        // Stop typing indicator
         sendToServer({ type: "stopTyping", username: myUsername, to: activeConvo });
         isTyping = false;
         clearTimeout(typingTimer);
@@ -2038,11 +1928,6 @@
         }
       }
 
-      // insertEmoji() removed — replaced by media file picker
-
-      // ════════════════════════════════════════════════
-      //  TYPING INDICATOR
-      // ════════════════════════════════════════════════
       let typingTimeout = null;
       function showTyping(from) {
         document.getElementById("typing-avatar").textContent =
@@ -2055,9 +1940,6 @@
         document.getElementById("typing-row").classList.remove("visible");
       }
 
-      // ════════════════════════════════════════════════
-      //  SYSTEM MESSAGES
-      // ════════════════════════════════════════════════
       function showSysMsg(text) {
         const msgEl = document.getElementById("messages");
         if (!msgEl) return;
@@ -2069,7 +1951,6 @@
       }
 
       function updateOnlineCount(count) {
-        // reserved for future use
       }
 
       function refreshChatHeaderStatus() {
@@ -2078,9 +1959,6 @@
           onlineUsers.has(activeConvo) ? 'Active now' : 'Offline';
       }
 
-      // ════════════════════════════════════════════════
-      //  NOTIFICATION BUBBLE
-      // ════════════════════════════════════════════════
       function showNotification(from, content) {
         const container = document.getElementById("notif-container");
         const bubble = document.createElement("div");
@@ -2103,9 +1981,6 @@
         }, 4000);
       }
 
-      // ════════════════════════════════════════════════
-      //  NEW MESSAGE MODAL
-      // ════════════════════════════════════════════════
       function openNewMsgModal() {
         updateOnlineUsersModal();
         document.getElementById("modal-backdrop").classList.remove("hidden");
@@ -2156,9 +2031,6 @@
         startDMWith(u);
       }
 
-      // ════════════════════════════════════════════════
-      //  UTILS
-      // ════════════════════════════════════════════════
       function escapeHtml(str) {
         return String(str)
           .replace(/&/g, "&amp;")
@@ -2167,7 +2039,6 @@
           .replace(/"/g, "&quot;");
       }
 
-      // Keyboard shortcut: Enter to login/signup
       document.getElementById("login-password").addEventListener("keydown", (e) => {
         if (e.key === "Enter") handleLogin();
       });
@@ -2178,9 +2049,6 @@
         if (e.key === 'Enter') handleSignup();
       });
 
-      // ─── Auto-restore session on page load ───────────────────────
-      // If the browser already has a valid server session cookie, skip the
-      // login screen entirely and go straight into the app.
       (async function checkSession() {
         try {
           const resp = await fetch("/api/auth/me");
@@ -2189,7 +2057,6 @@
             enterApp(data.username);
           }
         } catch (e) {
-          // Not logged in — stay on auth screen
         }
       })();
     </script>
