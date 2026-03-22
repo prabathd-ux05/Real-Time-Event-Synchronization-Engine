@@ -19,6 +19,7 @@ public class FileUploadController {
     @Value("${app.upload-dir:uploads}")
     private String uploadDir;
     
+    
     @PostMapping("/upload")
     public ResponseEntity<?> upload(@RequestParam("file") MultipartFile file,
                                      HttpSession session) throws IOException {
