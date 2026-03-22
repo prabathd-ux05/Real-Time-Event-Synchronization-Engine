@@ -16,18 +16,9 @@ import java.util.UUID;
 @RequestMapping("/api")
 public class FileUploadController {
 
-    /** Upload directory relative to working dir. Configurable via application.properties */
     @Value("${app.upload-dir:uploads}")
     private String uploadDir;
-
-    /**
-     * POST /api/upload
-     * Accepts a multipart file (image or video, ≤ 10 MB).
-     * Saves it to `uploads/` on disk.
-     * Returns a JSON body: { "url": "/uploads/<filename>", "fileType": "image/png" }
-     *
-     * The URL is then sent via WebSocket — no large binary over WS.
-     */
+    
     @PostMapping("/upload")
     public ResponseEntity<?> upload(@RequestParam("file") MultipartFile file,
                                      HttpSession session) throws IOException {
@@ -39,11 +30,9 @@ public class FileUploadController {
         if (file.isEmpty())
             return ResponseEntity.badRequest().body(Map.of("error", "No file provided."));
 
-        // Create upload directory if missing
         Path dir = Paths.get(uploadDir);
         Files.createDirectories(dir);
 
-        // Build a unique filename to prevent collisions
         String originalName = StringUtils.cleanPath(
                 file.getOriginalFilename() != null ? file.getOriginalFilename() : "file"
         );
