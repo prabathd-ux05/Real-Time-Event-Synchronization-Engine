@@ -21,29 +21,20 @@ public class Message {
 
     @Column(nullable = false, length = 50)
     private String receiver;
-
-    /**
-     * For text messages: the message text.
-     * For media messages: the server-relative URL (e.g. /uploads/uuid_filename.jpg).
-     */
+       
     @Column(nullable = false, columnDefinition = "TEXT")
     private String content;
 
-    /** "text" or "media" */
     @Column(nullable = false, length = 10)
     private String type;
 
-    /** MIME type for media messages, null for text (e.g. "image/png", "video/mp4") */
     @Column(length = 50)
     private String fileType;
-
-    /** Always serialised as ISO-8601 string so JS Date can parse it reliably */
+       
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     @Column(nullable = false)
     private LocalDateTime timestamp;
 
-
-    // ─── Getters / Setters ───────────────────────────────────────
 
     public Long getId() { return id; }
 
