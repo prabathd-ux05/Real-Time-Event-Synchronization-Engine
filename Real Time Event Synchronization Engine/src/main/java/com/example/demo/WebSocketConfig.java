@@ -20,7 +20,6 @@ public class WebSocketConfig implements WebSocketConfigurer {
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
         registry
             .addHandler(myWebSocketHandler, "/chat")
-            // Copies HTTP session attributes (incl. "username") into the WS session
             .addInterceptors(new HttpSessionHandshakeInterceptor())
             .setAllowedOrigins("*");
     }
