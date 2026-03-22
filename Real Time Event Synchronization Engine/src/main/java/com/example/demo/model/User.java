@@ -16,8 +16,6 @@ public class User {
     @Column(nullable = false, length = 255)
     private String password;
 
-    // ─── Getters / Setters ───────────────────────────────────────
-
     public Long getId() { return id; }
 
     public String getUsername() { return username; }
