@@ -11,10 +11,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Value("${app.upload-dir:uploads}")
     private String uploadDir;
 
-    /**
-     * Serves uploaded files at /uploads/** as static resources.
-     * e.g. GET /uploads/uuid_photo.jpg → reads from ./uploads/ on disk.
-     */
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry
