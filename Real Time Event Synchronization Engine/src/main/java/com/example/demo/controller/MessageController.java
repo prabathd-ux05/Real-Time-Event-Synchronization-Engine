@@ -17,10 +17,6 @@ public class MessageController {
     @Autowired
     private MessageRepository messageRepository;
 
-    /**
-     * GET /api/messages?with={username}
-     * Returns the full conversation between the logged-in user and the target.
-     */
     @GetMapping("/messages")
     public ResponseEntity<?> getMessages(@RequestParam("with") String partner,
                                           HttpSession session) {
@@ -31,12 +27,7 @@ public class MessageController {
         List<Message> messages = messageRepository.findConversation(me, partner);
         return ResponseEntity.ok(messages);
     }
-
-    /**
-     * GET /api/conversations
-     * Returns the list of distinct usernames the logged-in user has ever chatted with.
-     * Called once after login to pre-populate the sidebar chat list.
-     */
+    
     @GetMapping("/conversations")
     public ResponseEntity<?> getConversations(HttpSession session) {
         String me = (String) session.getAttribute("username");
